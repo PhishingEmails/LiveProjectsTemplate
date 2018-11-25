@@ -160,15 +160,34 @@
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
+        <bt:Url id="insertGistPaneUrl" DefaultValue="https://localhost:3000/msg-compose/insert-gist.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="Phishing Allert Button"/>        
         <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
         <bt:String id="paneReadButtonLabel" DefaultValue="Display all properties"/>
         <bt:String id="paneReadSuperTipTitle" DefaultValue="Get all properties"/>
+        <bt:String id="insertGistLabel" DefaultValue="Insert Gist">
+          <bt:Override Locale="es-ES" Value="Inserte el Gist"/>
+        </bt:String>
+        <bt:String id="insertGistTitle" DefaultValue="Insert Gist">
+          <bt:Override Locale="es-ES" Value="Inserte el Gist"/>
+        </bt:String>
+        <bt:String id="insertDefaultGistLabel" DefaultValue="Insert Default Gist">
+          <bt:Override Locale="es-ES" Value="Inserte el Gist predeterminado"/>
+        </bt:String>
+        <bt:String id="insertDefaultGistTitle" DefaultValue="Insert Default Gist">
+          <bt:Override Locale="es-ES" Value="Inserte el Gist predeterminado"/>
+        </bt:String>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties. This is an example of a button that opens a task pane."/>
+        <bt:String id="insertGistDesc" DefaultValue="Displays a list of your Gists and allows you to insert their contents into the current message">
+          <bt:Override Locale="es-ES" Value="Muestra una lista de sus Gists y permite insertar su contenido en el mensaje actual"/>
+        </bt:String>
+        <bt:String id="insertDefaultGistDesc" DefaultValue="Inserts the contents of the Gist you mark as default into the current message">
+          <bt:Override Locale="es-ES" Value="Inserta el contenido de lo Gist que marca como predeterminado en el mensaje actual"/>
+        </bt:String>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
