@@ -77,3 +77,4 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
+

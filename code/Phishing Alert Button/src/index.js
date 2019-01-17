@@ -15,8 +15,15 @@ Office.initialize = (reason) => {
     $('#app-body').show();
 };
 
-async function run() {
+async function submit() {
     /**
          * Insert your Outlook code here
+         * 
          */
+
+    messagebox.print("HELLO");
+
+
+
+
 }
