@@ -21,9 +21,29 @@ async function submit() {
          * 
          */
 
-    messagebox.print("HELLO");
+    POST https://outlook.office.com/api/v2.0/me/messages/AAMkAGE0Mz8DmAAA=/forward
+    Content - Type: application / json
+
+    {
+        "Comment": "FYI",
+            "ToRecipients": [
+                {
+                    "EmailAddress": {
+                        "Address": "PhishingEmails.123@gmail.com"
+                    }
+                },
+                {
+                    "EmailAddress": {
+                        "Address": "PhishingEmails.123@gmail.com"
+                    }
+
+                    // https://docs.microsoft.com/en-us/previous-versions/office/office-365-api/api/version-2.0/mail-rest-operations#ForwardDirectly
+                    //READ THIS
+                }
+            ]
+    }
 
 
-
+    
 
 }
