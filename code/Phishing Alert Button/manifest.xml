@@ -128,9 +128,9 @@
           <Description resid="insertDefaultGistDesc"/>
         </Supertip>
         <Icon>
-          <bt:Image size="16" resid="icon16"/>
-          <bt:Image size="32" resid="icon32"/>
-          <bt:Image size="80" resid="icon80"/>
+          <bt:Image size="16" resid="icon-16"/>
+          <bt:Image size="32" resid="icon-32"/>
+          <bt:Image size="80" resid="icon-80"/>
         </Icon>
         <Action xsi:type="ExecuteFunction">
           <FunctionName>insertDefaultGist</FunctionName>
