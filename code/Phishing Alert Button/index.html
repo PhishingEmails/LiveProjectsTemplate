@@ -10,8 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phishing Alert Button</title>
 
+    <script src="src\index.js" type="text/javascript"></script>
+
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>
+    
 
     <!-- LOCAL -->
     <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
@@ -57,16 +60,9 @@
 
 
 
-        <button role="button" id="submit" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" value="submit" onclick=submit()>
+        <button  class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" id="submit">
             <span class="ms-Button-label">Report Email</span>
             <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--Warning"></i></span>
-          
-
-
-            
-
-    
-
         </button>
     </main>
 
