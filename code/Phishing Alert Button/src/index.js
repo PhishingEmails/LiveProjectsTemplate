@@ -15,21 +15,35 @@ $(document).ready(() => {
 Office.initialize = (reason) => {
     $('#sideload-msg').hide();
     $('#app-body').show();
-    //$('#submit').click(function () { sendNow(); });
+    $('#submit').click(function () { sendNow(); });
 };
 
 
 
-function sendNow(){
+async function sendNow(){
 
-alert("working!");
-
+    window.alert("I am an alert box!");
 
 
 }
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   var item = Office.context.mailbox.item;
 //   item_id = item.itemId;
 //   mailbox = Office.context.mailbox;
