@@ -20,7 +20,7 @@ Office.initialize = (reason) => {
 
 
 
-async function sendNow(){
+function sendNow(){
 
     window.alert("I am an alert box!");
 
