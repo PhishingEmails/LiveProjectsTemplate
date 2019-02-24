@@ -8,7 +8,7 @@ Office.initialize = function (reason) {
 
 // Add any ui-less function here
 function showError(error) {
-  Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
+  Office.context.mailbox.item.notificationMessages.replaceAsync('error', {
     type: 'errorMessage',
     message: error
   }, function(result){
@@ -19,17 +19,24 @@ var settingsDialog;
 
 
 
-function sendNow(){
+function forward()
+{
 
-  alert("I am an alert box!");
+POST https://outlook.office.com/api/v2.0/me/messages/message_id=/forward
+Content-Type: application/json
 
-
+{
+  "comment": "FYI",
+  "toRecipients": [
+    {
+      "emailAddress": {
+        "address": "ryan0598@live.co.uk",
+        "name": "Alex Darrow"
+      }
+    }
+  ]
 }
-
-
-
-
-
+}
 
 
 
