@@ -19,25 +19,45 @@ var settingsDialog;
 
 
 
-function forward()
-{
+// function forward()
+// {
 
-POST https://outlook.office.com/api/v2.0/me/messages/message_id=/forward
-Content-Type: application/json
+//   var https = require("https");
+//   var fs = require("fs");
+//   var internetMessageId = Office.context.mailbox.item.internetMessageId;
+//   alert (internetMessageId);
 
-{
-  "comment": "FYI",
-  "toRecipients": [
-    {
-      "emailAddress": {
-        "address": "ryan0598@live.co.uk",
-        "name": "Alex Darrow"
-      }
-    }
-  ]
-}
-}
+//   var options = {
+//     hostname: "outlook.office.com",
+//     port: 443
+//     path: "/api/v2.0/me/messages/" + "internetMessageId" + "=/forward",
+//     method: "POST"
+//   };
 
+// {
+//   "comment": "FYI",
+//   "toRecipients": [
+//     {
+//       "emailAddress": {
+//         "name": "Alex Darrow"
+//       }
+//     }
+//   ]
+// }
+// }
+
+
+https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}
+&response_type=code
+&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F
+&response_mode=query
+&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
+
+
+
+
+https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F&response_mode=query&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
 
 
 
