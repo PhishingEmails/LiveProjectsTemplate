@@ -18,6 +18,18 @@ function showError(error) {
 var settingsDialog;
 
 
+function forward(){
+
+
+}
+
+
+
+
+
+
+
+
 
 // function forward()
 // {
@@ -47,17 +59,17 @@ var settingsDialog;
 // }
 
 
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
-client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}
-&response_type=code
-&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F
-&response_mode=query
-&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
+// https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+// client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}
+// &response_type=code
+// &redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F
+// &response_mode=query
+// &scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
 
 
 
 
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F&response_mode=query&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
+// https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={{40668015-dc28-4d5a-bc32-892320d056c1}}&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A3000%2F&response_mode=query&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2FUser.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.read%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.write%2Chttps%3A%2F%2Fgraph.microsoft.com%2FMail.send
 
 
 
