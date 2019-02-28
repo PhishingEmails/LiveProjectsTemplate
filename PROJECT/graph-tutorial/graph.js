@@ -6,9 +6,10 @@ module.exports = {
 
     const user = await client.api('/me').get();
     return user;
-  }
+  },
+//};
 
-
+//module.exports = {
   getEvents: async function(accessToken) {
     const client = getAuthenticatedClient(accessToken);
   

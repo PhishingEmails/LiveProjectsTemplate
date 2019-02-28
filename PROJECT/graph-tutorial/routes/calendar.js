@@ -10,7 +10,7 @@ router.get('/',
       // Redirect unauthenticated requests to home page
       res.redirect('/')
     } else {
-      let params = {
+      req.params = {
         active: { calendar: true }
       };
 
