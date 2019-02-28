@@ -10,7 +10,7 @@ router.get('/',
       // Redirect unauthenticated requests to home page
       res.redirect('/')
     } else {
-      req.params = {
+      let params = {
         active: { calendar: true }
       };
 
@@ -19,19 +19,26 @@ router.get('/',
       try {
         accessToken = await tokens.getAccessToken(req);
       } catch (err) {
-        res.json(err);
+        req.flash('error_msg', {
+          message: 'Could not get access token. Try signing out and signing in again.',
+          debug: JSON.stringify(err)
+        });
       }
 
       if (accessToken && accessToken.length > 0) {
         try {
           // Get the events
           var events = await graph.getEvents(accessToken);
-
-          res.json(events.value);
+          params.events = events.value;
         } catch (err) {
-          res.json(err);
+          req.flash('error_msg', {
+            message: 'Could not fetch events',
+            debug: JSON.stringify(err)
+          });
         }
       }
+
+      res.render('calendar', params);
     }
   }
 );
