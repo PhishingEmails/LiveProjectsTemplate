@@ -28,7 +28,7 @@ module.exports = {
   
     const events = await client
       .api('/me/messages')
-      .select('subject,organizer,start,end')
+      .select('id,subject,bodyPreview')
       .orderby('createdDateTime DESC')
       .get();
   
