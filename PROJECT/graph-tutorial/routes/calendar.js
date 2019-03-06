@@ -4,8 +4,7 @@ var tokens = require('../tokens.js');
 var graph = require('../graph.js');
 
 /* GET /calendar */
-router.get('/',
-  async function(req, res) {
+router.get('/',async function(req, res) {
     if (!req.isAuthenticated()) {
       // Redirect unauthenticated requests to home page
       res.redirect('/')

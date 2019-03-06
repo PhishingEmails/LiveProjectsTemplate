@@ -20,7 +20,7 @@ Office.initialize = (reason) => {
 
 
 
-function sendNow(){
+function forward(){
 
     window.alert("I am an alert box!");
 

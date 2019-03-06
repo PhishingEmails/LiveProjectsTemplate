@@ -90,6 +90,7 @@ passport.use(new OIDCStrategy(
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+var mail = require('./routes/mail');
 var calendarRouter = require('./routes/calendar');
 var forwardRouter = require('./routes/forward');
 var app = express();
@@ -155,6 +156,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/mail', mail);
 app.use('/forward', forwardRouter);
 app.use('/calendar', calendarRouter);
 app.use('/users', usersRouter);

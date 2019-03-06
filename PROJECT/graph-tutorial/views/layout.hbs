@@ -33,7 +33,9 @@
                 <a href="/calendar" class="nav-link{{#if active.calendar}} active{{/if}}">Calendar</a>
               </li>
               <li><a href="/forward" class="nav-link{{#if active.forward}} active{{/if}}">Report</a></li>
-            {{/if}}
+              <li class="nav-item{{#if active.inbox}} active{{/if}}">
+              <a class="nav-link" href="/mail">Inbox</a>
+            </li>            {{/if}}
           </ul>
           <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
