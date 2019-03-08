@@ -1,44 +1,32 @@
-var express = require('express');
-var router = express.Router();
-var authHelper = require('../helpers/auth');
-var graph = require('@microsoft/microsoft-graph-client');
-
-/* POST /forward */
-router.get('/', async function(req, res, next) {
-    let parms = { title: 'Inbox', active: { inbox: true } };
+function forward(message_id)
+{
+  POST https://graph.microsoft.com/v1.0/me/messages/{id}/forward
+  Content-type: application/json
+  Content-length: 166
   
-    const accessToken = await authHelper.getAccessToken(req.cookies, res);
-    const userName = req.cookies.graph_user_name;
-  
-    if (accessToken && userName) {
-      parms.user = userName;
-  
-      // Initialize Graph client
-      const client = graph.Client.init({
-        authProvider: (done) => {
-          done(null, accessToken);
+  {
+    "comment": "comment-value",
+    "toRecipients": [
+      {
+        "emailAddress": {
+          "name": "name-value",
+          "address": "address-value"
         }
-      });
-  
-      try {
-        const result = await client
-        
-        .api('/me/messages/{message_id}/forward')
-        .post();
-  
-        parms.messages = result.value;
-        res.render('mail', parms);
-      } catch (err) {
-        parms.message = 'Error retrieving messages';
-        parms.error = { status: `${err.code}: ${err.message}` };
-        parms.debug = JSON.stringify(err.body, null, 2);
-        res.render('error', parms);
       }
-  
-    } else {
-      // Redirect to home
-      res.redirect('/');
-    }
-  });
+    ]
+  }
 
-module.exports = router;
+}
+
+
+
+
+
+
+
+      // try {
+      //   const result = await client
+      //   .api('/me/messages/{message_id}/forward')
+      //   .post();
+      // }
+    
