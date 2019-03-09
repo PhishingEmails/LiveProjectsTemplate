@@ -4,6 +4,7 @@
     <th scope="col">From</th>
     <th scope="col">Subject</th>
     <th scope="col">Received</th>
+    <th scope="col">Body Preview</th>
     <th></th>
     <!--<th scope="col">ID</th>-->
     <th scope="col"></th>
@@ -14,8 +15,9 @@
         <td title="{{this.from.emailAddress.address}}">{{this.from.emailAddress.name}}</td>
         <td>{{this.subject}}</td>
         <td>{{this.receivedDateTime}}</td>
+        <td>{{this.BodyPreview}}</td>
+
         <!--<td>{{this.id}}</td>-->
-        <td><button type="button" class="btn btn-success" onclick="viewMessage({{this.id}});">Preview Message</button></td>
         <td><button type="button" class="btn btn-danger" onclick="forward({{this.id}});">Report Email</button></td>
         
       </tr>

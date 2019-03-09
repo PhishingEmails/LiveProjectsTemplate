@@ -3,9 +3,11 @@ var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
-/* POST /forward */
-router.post('/', async function(req, res, next) {
-    let parms = { title: 'Report', active: { Report: true } };
+
+/* GET /Selectedmail */
+router.get('/', async function(req, res, next) {
+    let parms = { title: 'getMessage', active: { getMessage: true } };
+  
     const accessToken = await authHelper.getAccessToken(req.cookies, res);
     const userName = req.cookies.graph_user_name;
   
@@ -21,16 +23,14 @@ router.post('/', async function(req, res, next) {
   
       try {
         const result = await client
-        cont id = await {{this.id}}
-        .api('/me/messages/{message_id}/forward')
-        .post();
-
-        res.send(request)
+        .api('/me/mailfolders/inbox/messages{{this.id}}')
+        .select('subject,from,receivedDateTime,isRead,id,BodyPreview')
+        .get();
   
         parms.messages = result.value;
         res.render('mail', parms);
       } catch (err) {
-        parms.message = 'Error Sending Report';
+        parms.message = 'Error retrieving message';
         parms.error = { status: `${err.code}: ${err.message}` };
         parms.debug = JSON.stringify(err.body, null, 2);
         res.render('error', parms);
@@ -38,7 +38,7 @@ router.post('/', async function(req, res, next) {
   
     } else {
       // Redirect to home
-      res.redirect('/mail/');
+      res.redirect('/');
     }
   });
 
