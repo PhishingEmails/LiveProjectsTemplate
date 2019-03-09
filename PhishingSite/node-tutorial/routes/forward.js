@@ -1,15 +1,32 @@
+
+function forward(){
+  const result = await client
+  const api = { '/me/messages/':id+'/forward'}
+  .api(api)
+  .post();
+  res.send(request)
+}
+
+
+
+function qforward() {
+
+
 var express = require('express');
 var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
 /* POST /forward */
-router.post('/', async function(req, res, next) {
-    let parms = { title: 'Report', active: { Report: true } };
-    const accessToken = await authHelper.getAccessToken(req.cookies, res);
-    const userName = req.cookies.graph_user_name;
-  
-    if (accessToken && userName) {
+router.post('/submit', function(req, res, next){
+  var id = req.params.id
+  res.redirect('/submit/' + id)
+
+
+  const accessToken = await authHelper.getAccessToken(req.cookies, res);
+  const userName = req.cookies.graph_user_name;
+
+      if (accessToken && userName) {
       parms.user = userName;
   
       // Initialize Graph client
@@ -21,11 +38,11 @@ router.post('/', async function(req, res, next) {
   
       try {
         const result = await client
-        cont id = await {{this.id}}
-        .api('/me/messages/{message_id}/forward')
+        const api = { '/me/messages/':id+'/forward'}
+        .api(api)
         .post();
-
         res.send(request)
+
   
         parms.messages = result.value;
         res.render('mail', parms);
@@ -42,7 +59,60 @@ router.post('/', async function(req, res, next) {
     }
   });
 
-module.exports = router;
+module.exports = router
+
+}
+
+
+
+
+
+
+// var express = require('express');
+// var router = express.Router();
+// var authHelper = require('../helpers/auth');
+// var graph = require('@microsoft/microsoft-graph-client');
+
+// /* POST /forward */
+// router.post('/', async function(req, res, next) {
+//     let parms = { title: 'Report', active: { Report: true } };
+//     const accessToken = await authHelper.getAccessToken(req.cookies, res);
+//     const userName = req.cookies.graph_user_name;
+  
+//     if (accessToken && userName) {
+//       parms.user = userName;
+  
+//       // Initialize Graph client
+//       const client = graph.Client.init({
+//         authProvider: (done) => {
+//           done(null, accessToken);
+//         }
+//       });
+  
+//       try {
+//         const result = await client
+//         cont id = await {{this.id}}
+//         .api('/me/messages/{message_id}/forward')
+//         .post();
+
+//         res.send(request)
+  
+//         parms.messages = result.value;
+//         res.render('mail', parms);
+//       } catch (err) {
+//         parms.message = 'Error Sending Report';
+//         parms.error = { status: `${err.code}: ${err.message}` };
+//         parms.debug = JSON.stringify(err.body, null, 2);
+//         res.render('error', parms);
+//       }
+  
+//     } else {
+//       // Redirect to home
+//       res.redirect('/mail/');
+//     }
+//   });
+
+// module.exports = router;
 
 
 
