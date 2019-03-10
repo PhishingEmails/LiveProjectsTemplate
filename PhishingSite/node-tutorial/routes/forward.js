@@ -4,12 +4,12 @@ var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
 
-function forward(id){
+function forward({id} , {accessToken}){
   const headers = new headers()
   headers.append('Content-Type', 'application/json');
   const options = {
     method = 'POST',
-    headers = token,
+    headers = accessToken + application/JSON,
     data = {  
   "Comment": "REPORT",
   "ToRecipients": [
@@ -20,10 +20,10 @@ function forward(id){
     }
   ]
     },
-    body: JSON.stringify(data),
+    //body: JSON.stringify(data),
   };
   const id = {id};
-  const request = new Request ('https://graph.microsoft.com/v1.0/me/messages/' +{id} +'/forward', );
+  const request = new Request ('https://graph.microsoft.com/v1.0/me/messages/' +{id} +'/forward',);
 
   const resp = await fetch(req);
   const status = await resp.status;
