@@ -4,14 +4,22 @@ var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
 
-function forward(data){
+function forward(id){
   const headers = new headers()
   headers.append('Content-Type', 'application/json');
-
-  
   const options = {
     method = 'POST',
-    headers = {{id}},
+    headers = token,
+    data = {  
+  "Comment": "REPORT",
+  "ToRecipients": [
+    {
+      "EmailAddress": {
+        "Address": "phishingreport@outlook.com"
+      }
+    }
+  ]
+    },
     body: JSON.stringify(data),
   };
   const id = {id};
@@ -22,5 +30,6 @@ function forward(data){
 
   if (status === (201)) {
     res.redirect('/mail/');
+    alert("Report Sent");
   }
 }
