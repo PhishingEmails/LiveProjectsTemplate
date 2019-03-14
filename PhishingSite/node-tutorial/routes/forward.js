@@ -3,15 +3,13 @@ var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
-/* GET /forward */
-router.get('/', async function(req, res, next) {
-    let parms = { title: 'Forward', active: { forward: true } };
+/* POST /forward */
+router.get('/forward', async function(req, res, next) {
     const accessToken = await authHelper.getAccessToken(req.cookies, res);
-    const userName = req.cookies.graph_user_name;
+    params.id = mail.getid();
+    parms.debug = parms.getid;
   
-    if (accessToken && userName) {
-      parms.user = userName;
-  
+    if (accessToken && id) {  
       // Initialize Graph client
       const client = graph.Client.init({
         authProvider: (done) => {
@@ -20,18 +18,34 @@ router.get('/', async function(req, res, next) {
       });
   
       try {
-        const result = await client
-        .api('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward')
-        var postData = JSON.stringify({
-        "Comment": "REPORT",
-        "ToRecipients": [
-        {"EmailAddress": {
-        "Address": "phishingreport@outlook.com"}}]
-        });
-        .POST(postData);
-  
-        parms.messages = result.value;
-        res.render('mail', parms);
+
+alert("ERROR");
+
+
+
+
+        // const forward_params = {
+
+            
+        //   headers : { "content-type" : "application/json" ,  "authorization" : accessToken},
+        //   body : JSON.stringify({
+        //     "Comment": "REPORT",
+        //     "ToRecipients": [
+        //     {"EmailAddress": {
+        //     "Address": "phishingreport@outlook.com"}}]
+        //     });
+        //   method : "POST",
+        // }
+        // const result = await client
+        // .api('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward')
+        // var data = JSON.stringify({
+        // "Comment": "REPORT",
+        // "ToRecipients": [
+        // {"EmailAddress": {
+        // "Address": "phishingreport@outlook.com"}}]
+        // });
+        // //.POST(postData);
+
       } catch (err) {
         parms.message = 'Error Reporting Message';
         parms.error = { status: `${err.code}: ${err.message}` };
@@ -40,8 +54,9 @@ router.get('/', async function(req, res, next) {
       }
     } else {
       // Redirect to home
-      res.redirect('/');
+      res.redirect('/mail');
     }
+    res.render('forward', parms);
   });
 
 module.exports = router;

@@ -10,8 +10,6 @@ var authorize = require('./routes/authorize');
 var mail = require('./routes/mail');
 var forward = require('./routes/forward');
 
-
-
 var app = express();
 
 // view engine setup
