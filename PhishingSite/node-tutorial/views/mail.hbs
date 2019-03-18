@@ -17,15 +17,39 @@
         <td>{{this.receivedDateTime}}</td>
         <!--<td>{{this.id}}</td>-->
         <td><button type="button" class="btn btn-success" onclick="\routes\mail({{this.id}});"href = '\routes\mail'>View Email</button></td>
-        <td><button method = "post" id = "postbutton" type="button" class="btn btn-danger" onclick="forward();">Report</button></td>
+        {{!-- <td><button method = "post" id = "postbutton" type="button" class="btn btn-danger" onclick="forward();">Report</button></td> --}}
+        <td><button method = "post" id = "postbutton" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" data-backdrop="false"">Report</button></td>
       </tr>
     {{/each}}
   </tbody>
 </table>
 
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
 
-<script>const button = document.getElementById('postbutton');
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Phishing Report</h4>
+      </div>
+      <div class="modal-body">
+        <p>Thank You For Submitting a Phishing Report. We Will Contact You When We Have Investigated This.
+          </br> Reference Number : 20168
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+{{!-- <script>const button = document.getElementById('postbutton');
 button.addEventListener('click', async _ => {
   try {     
     const response = await fetch('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward', {
@@ -43,4 +67,4 @@ button.addEventListener('click', async _ => {
     console.error(`Error: ${err}`);
   }
 });
-</script>
+</script> --}}
