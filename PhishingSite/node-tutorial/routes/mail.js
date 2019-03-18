@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
+var requestify = require('requestify');
+
 
 /* GET /mail */
 router.get('/', async function(req, res, next) {
@@ -43,4 +45,63 @@ router.get('/', async function(req, res, next) {
     }
   });
 
-module.exports = router;
+  module.exports = router;
+
+
+
+
+// function forward (id, accessToken){
+//   requestify.request('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward', {
+//     method: 'POST',
+//     body: {
+//       "Comment": "REPORT",
+//        "ToRecipients": [
+//            {"EmailAddress": {
+//            "Address": "phishingreport@outlook.com"}}]
+//            },
+//     headers: {
+//        'content-type' : "application/json" ,  "authorization" : 'accessToken'
+//     },
+//     dataType: 'json'        
+// })
+// .then(function(response) {
+//     // get the response body
+//     response.getBody();
+
+//     // get the response headers
+//     response.getHeaders();
+
+//     // get specific response header
+//     response.getHeader('Accept');
+
+//     // get the code
+//     response.getCode();
+
+//     // Get the response raw body
+//     response.body;
+// });
+// }
+
+
+
+
+
+//   requestify.post('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward', {
+//     hello: 'world'
+// })
+// .then(function(response) {
+//     // Get the response body
+//     response.getBody();
+// });
+
+
+
+
+
+
+//   function forward(id, accessToken)
+//   {
+//     api('/me/messages/'+{id}+'/forward', post , {message_id :id})
+//     postMessage;
+//   }
+

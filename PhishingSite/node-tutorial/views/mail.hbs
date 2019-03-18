@@ -16,7 +16,8 @@
         <td>{{this.subject}}</td>
         <td>{{this.receivedDateTime}}</td>
         <!--<td>{{this.id}}</td>-->
-        <td><button type="button" class="btn btn-danger" onclick="\routes\forward({{this.id}});"href = '\routes\forward'>Report Email</button></td>
+        <td><button type="button" class="btn btn-success" onclick="\routes\mail({{this.id}});"href = '\routes\mail'>View Email</button></td>
+        <td><button type="button" class="btn btn-danger" onclick="forward({{this.id}});>Report</button></td>
         
       </tr>
     {{/each}}
