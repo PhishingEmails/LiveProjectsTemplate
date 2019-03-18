@@ -93,15 +93,3 @@ router.get('/', async function(req, res, next) {
 //     // Get the response body
 //     response.getBody();
 // });
-
-
-
-
-
-
-//   function forward(id, accessToken)
-//   {
-//     api('/me/messages/'+{id}+'/forward', post , {message_id :id})
-//     postMessage;
-//   }
-
