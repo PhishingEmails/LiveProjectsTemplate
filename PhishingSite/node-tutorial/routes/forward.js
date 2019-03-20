@@ -29,27 +29,27 @@ alert("ERROR");
 
 
 
-        // const forward_params = {
+        const forward_params = {
 
             
-        //   headers : { "content-type" : "application/json" ,  "authorization" : accessToken},
-        //   body : JSON.stringify({
-        //     "Comment": "REPORT",
-        //     "ToRecipients": [
-        //     {"EmailAddress": {
-        //     "Address": "phishingreport@outlook.com"}}]
-        //     });
-        //   method : "POST",
-        // }
-        // const result = await client
-        // .api('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward')
-        // var data = JSON.stringify({
-        // "Comment": "REPORT",
-        // "ToRecipients": [
-        // {"EmailAddress": {
-        // "Address": "phishingreport@outlook.com"}}]
-        // });
-        // //.POST(postData);
+          headers : { "content-type" : "application/json" ,  "authorization" : accessToken},
+          body : JSON.stringify({
+            "Comment": "REPORT",
+            "ToRecipients": [
+            {"EmailAddress": {
+            "Address": "phishingreport@outlook.com"}}]
+            });
+          method : "POST",
+        }
+        const result = await client
+        .api('https://graph.microsoft.com/v1.0/me/messages/'+{id}+'/forward')
+        var data = JSON.stringify({
+        "Comment": "REPORT",
+        "ToRecipients": [
+        {"EmailAddress": {
+        "Address": "phishingreport@outlook.com"}}]
+        });
+        //.POST(postData);
 
       } catch (err) {
         parms.message = 'Error Reporting Message';
